@@ -74,7 +74,7 @@ bool ScientistRepository::addScientist(Scientist scientist)
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "ComputerHistory";
     db.setDatabaseName(dbName);
-    ofstream file;
+    ofstream file;//thessu tharf ad breyta, ekki ofstream heldur setja i toflu
 
     db.open();
     QSqlQuery query(db);
