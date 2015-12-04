@@ -1,7 +1,7 @@
 #include "repositories/scientistrepository.h"
 #include "utilities/utils.h"
 #include "utilities/constants.h"
-
+#include <QtSql>
 #include <fstream>
 #include <cstdlib>
 
@@ -70,16 +70,22 @@ vector<Scientist> ScientistRepository::searchForScientists(string searchTerm)
 
 bool ScientistRepository::addScientist(Scientist scientist)
 {
+    QSqlDatabase db;
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    QString dbName = "ComputerHistory";
+    db.setDatabaseName(dbName);
     ofstream file;
 
-    file.open(fileName.c_str(), std::ios::app);
+    db.open();
+    QSqlQuery query(db);
 
-    if (file.is_open())
+    if (db.open())
     {
         string name = scientist.getName();
         enum sexType sex = scientist.getSex();
         int yearBorn = scientist.getYearBorn();
         int yearDied = scientist.getYearDied();
+
 
         file << name << constants::FILE_DELIMETER
              << sex << constants::FILE_DELIMETER
@@ -97,6 +103,6 @@ bool ScientistRepository::addScientist(Scientist scientist)
         return false;
     }
 
-    file.close();
+    db.close();
     return true;
 }
