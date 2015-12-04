@@ -1,3 +1,4 @@
+QT += sql
 QT += core
 QT -= gui
 
