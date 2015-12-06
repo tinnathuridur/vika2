@@ -1,0 +1,23 @@
+The Difference engine
+1822
+Var ekki byggð.
+Tengd við Charles Babbage
+
+Turing machine
+1936
+Var byggð
+Tengd við Alan Turing
+
+Atanasoff-Berry computer
+1946
+var byggð
+Tengd við John Vincent Atanasoff og Clifford Berry
+
+Electronic Numerical Integrator and Calculator (ENIAC)
+1944
+Var byggð
+Tengd við John Mauchly og J. Presper Eckert
+
+
+
+
