@@ -11,9 +11,9 @@ Database::Database(char* filename) {
     open(filename);
 }
 
-Database::~Database(char*filename) {
+//Database::~Database(char*filename) {
 
-}
+//}
 
 bool Database::open(char *filename) {
 
@@ -32,7 +32,7 @@ vector<vector<string> > Database::query(char *query){
 
     if  (sqlite3_prepare_v2(database, query, -1, &statement, 0) == SQLITE_OK){
 
-        int cols = sqlite3_column_count(satement);
+        int cols = sqlite3_column_count(statement);
         int result = 0;
 
         while(true){
@@ -44,7 +44,7 @@ vector<vector<string> > Database::query(char *query){
                 vector<string> values;
                 for (int col = 0; col < cols; col++){
                     string val;
-                    char* ptr = (char*)sqlite3_column_text(satement, col);
+                    char* ptr = (char*)sqlite3_column_text(statement, col);
 
                     if (ptr) {
 
@@ -67,7 +67,7 @@ vector<vector<string> > Database::query(char *query){
             }
         }
 
-        sqlite3_finalize(satement);
+        sqlite3_finalize(statement);
     }
 
     string error = sqlite3_errormsg(database);
