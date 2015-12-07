@@ -3,9 +3,9 @@
 #include <string>
 
 enum computerType {
-    mechanical,
-    electronic,
-    transitor
+    Mechanical,
+    Electronic,
+    Transitor
 };
 
 class Computer

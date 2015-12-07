@@ -46,17 +46,17 @@ bool Computer::contains(std::string searchTerm)
         return true;
     }
 
-    if (searchTermLower == "mechanical" && type == computerType::mechanical)
+    if (searchTermLower == "Mechanical" && type == computerType::Mechanical)
     {
         return true;
     }
 
-    if (searchTermLower == "electronic" && type == computerType::electronic)
+    if (searchTermLower == "Electronic" && type == computerType::Electronic)
     {
         return true;
     }
 
-    if (searchTermLower == "transitor" && type == computerType::transitor)
+    if (searchTermLower == "Transitor" && type == computerType::Transitor)
     {
         return true;
     }

@@ -4,8 +4,8 @@
 #include <string>
 
 enum sexType {
-    female,
-    male
+    Female,
+    Male
 };
 
 /**

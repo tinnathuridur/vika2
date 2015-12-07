@@ -230,7 +230,7 @@ void ConsoleUI::displayScientists(std::vector<Scientist> scientists)
 
     for (unsigned int i = 0; i < scientists.size(); i++)
     {
-        string scientistSex = (scientists.at(i).getSex() == sexType::male) ? "Male" : "Female";
+        string scientistSex = (scientists.at(i).getSex() == sexType::Male) ? "Male" : "Female";
 
         int yearDied = scientists.at(i).getYearDied();
         string died = (yearDied == constants::YEAR_DIED_DEFAULT_VALUE) ? "Alive" : utils::intToString(yearDied);
@@ -253,11 +253,11 @@ bool ConsoleUI::addScientist(string data)
         enum sexType sex;
         if (fields.at(1) == "male")
         {
-            sex = sexType::male;
+            sex = sexType::Male;
         }
         else
         {
-            sex = sexType::female;
+            sex = sexType::Female;
         }
         int yearBorn = utils::stringToInt(fields.at(2));
 
