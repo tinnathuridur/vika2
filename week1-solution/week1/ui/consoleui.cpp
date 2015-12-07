@@ -185,10 +185,10 @@ void ConsoleUI::displayScientistSortMenu()
 {
     cout << "How should the list be sorted:\n\n";
     cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
-         << constants::SORT_NAME_ASCENDING << "Sorts by name, ascending.\n";
+         << constants::SORT_SCIENTIST_NAME_ASCENDING << "Sorts by name, ascending.\n";
 
     cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
-         << constants::SORT_NAME_DESCENDING << "Sorts by name, descending.\n";
+         << constants::SORT_SCIENTIST_NAME_DESCENDING << "Sorts by name, descending.\n";
 
     cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
          << constants::SORT_SCIENTIST_YEAR_BORN_ASCENDING << "Sorts by year born, ascending.\n";
@@ -278,12 +278,12 @@ bool ConsoleUI::addScientist(string data)
 
 bool ConsoleUI::setSort(string sortCommand)
 {
-    if (sortCommand == constants::SORT_NAME_ASCENDING)
+    if (sortCommand == constants::SORT_SCIENTIST_NAME_ASCENDING)
     {
         sortBy = "name";
         sortAscending = true;
     }
-    else if (sortCommand == constants::SORT_NAME_DESCENDING)
+    else if (sortCommand == constants::SORT_SCIENTIST_NAME_DESCENDING)
     {
         sortBy = "name";
         sortAscending = false;
