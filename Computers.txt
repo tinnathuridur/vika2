@@ -1,21 +1,25 @@
 The Difference engine
 1822
 Var ekki byggð.
+Mechanical computer
 Tengd við Charles Babbage
 
 Turing machine
 1936
 Var byggð
+Electronic computer
 Tengd við Alan Turing
 
 Z3
 1941
 Var byggð
+Electronic computer
 Tengd við Konrad Zuse
 
 Electronic Numerical Integrator and Calculator (ENIAC)
 1944
 Var byggð
+Electronic computer
 Tengd við John Mauchly og J. Presper Eckert
 
 Atanasoff-Berry computer
