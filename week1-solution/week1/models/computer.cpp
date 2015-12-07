@@ -1,5 +1,6 @@
-#include "computer.h"
-
+#include "models/computer.h"
+#include "utilities/utils.h"
+#include "utilities/constants.h"
 using namespace std;
 
 Computer::Computer():name(" "), yearBuilt(0), type(), wasBuilt(0)
@@ -35,4 +36,30 @@ bool Computer::getWasBuilt() const
     return wasBuilt;
 }
 
-//bool contains(std::string searchTerm);
+bool Computer::contains(std::string searchTerm)
+{
+    string searchTermLower = utils::stringToLower(searchTerm);
+
+    string nameLower = utils::stringToLower(name);
+    if (nameLower.find(searchTermLower) != string::npos)
+    {
+        return true;
+    }
+
+    if (searchTermLower == "mechanical" && type == computerType::mechanical)
+    {
+        return true;
+    }
+
+    if (searchTermLower == "electronic" && type == computerType::electronic)
+    {
+        return true;
+    }
+
+    if (searchTermLower == "transitor" && type == computerType::transitor)
+    {
+        return true;
+    }
+
+    return false;
+}
