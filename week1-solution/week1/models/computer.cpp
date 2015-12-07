@@ -3,15 +3,15 @@
 #include "utilities/constants.h"
 using namespace std;
 
-Computer::Computer():name(" "), yearBuilt(0), type(), wasBuilt(0)
+Computer::Computer():name(" "), yearInvented(0), type(), wasBuilt(0)
 {
 
 }
 
-Computer::Computer(string name, int yearBuilt, computerType type, bool wasBuilt)
+Computer::Computer(string name, int yearInvented, computerType type, bool wasBuilt)
 {
     this->name = name;
-    this->yearBuilt = yearBuilt;
+    this->yearInvented = yearInvented;
     this->type = type;
     this->wasBuilt = wasBuilt;
 }
@@ -21,9 +21,9 @@ string Computer::getName() const
     return name;
 }
 
-int Computer::getYearBuilt() const
+int Computer::getYearInvented() const
 {
-    return yearBuilt;
+    return yearInvented;
 }
 
 computerType Computer::getType() const

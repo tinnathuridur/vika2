@@ -12,10 +12,10 @@ class Computer
 {
 public:
     Computer();
-    Computer(std::string name, int yearBuilt, computerType type, bool wasBuilt);
+    Computer(std::string name, int yearInvented, computerType type, bool wasBuilt);
 
     std::string getName() const;
-    int getYearBuilt() const;
+    int getYearInvented() const;
     enum computerType getType() const;
     bool getWasBuilt() const;
 
@@ -23,7 +23,7 @@ public:
 
 private:
     std::string name;
-    int yearBuilt;
+    int yearInvented;
     enum computerType type;
     bool wasBuilt;
 };
