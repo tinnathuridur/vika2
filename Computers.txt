@@ -8,15 +8,22 @@ Turing machine
 Var byggð
 Tengd við Alan Turing
 
-Atanasoff-Berry computer
-1946
-var byggð
-Tengd við John Vincent Atanasoff og Clifford Berry
+Z3
+1941
+Var byggð
+Tengd við Konrad Zuse
 
 Electronic Numerical Integrator and Calculator (ENIAC)
 1944
 Var byggð
 Tengd við John Mauchly og J. Presper Eckert
+
+Atanasoff-Berry computer
+1946
+var byggð
+Tengd við John Vincent Atanasoff og Clifford Berry
+
+
 
 
 
