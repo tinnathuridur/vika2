@@ -11,6 +11,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     models/scientist.cpp \
+    models/computer.cpp\
     repositories/scientistrepository.cpp \
     services/scientistservice.cpp \
     ui/consoleui.cpp \
@@ -20,6 +21,7 @@ SOURCES += main.cpp \
 
 HEADERS += \
     models/scientist.h \
+    models/computer.h\
     repositories/scientistrepository.h \
     utilities/utils.h \
     utilities/constants.h \
