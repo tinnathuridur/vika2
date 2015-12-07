@@ -70,7 +70,7 @@ vector<vector<string> > Database::query(char *query){
         sqlite3_finalize(statement);
     }
 
-    string error = sqlite3_errormsg(database);
+    string error = sqlite3_errmsg(database);
     if (error != "not an error"){
 
         cout << query << " " << error << endl;
