@@ -8,7 +8,7 @@
 
 
 /**
- * @brief The ScientistRepository class handles reading and writing scientists to and from a file
+ * @brief The ScientistRepository class handles reading and writing scientists to and from a database
  */
 class ScientistRepository
 {
@@ -16,20 +16,20 @@ public:
     ScientistRepository();
 
     /**
-     * @brief getAllScientists fetches all scientists from the data file
+     * @brief getAllScientists fetches all scientists from database
      * @return a vector containing all scientists in the data file
      */
     std::vector<Scientist> getAllScientists();
 
     /**
-     * @brief searchForScientists fetches all scientists from file and filters them on searchTerm
+     * @brief searchForScientists fetches all scientists from database and filters them on searchTerm
      * @param searchTerm Contains the input that the user wishes to filter on
      * @return a vector of scientists filtered by searchTerm
      */
     std::vector<Scientist> searchForScientists(std::string searchTerm);
 
     /**
-     * @brief addScientist saves a scientist model to a file
+     * @brief addScientist saves a scientist model to a database
      * @param scientist The model to save
      * @return true if it was a success, false if it was a failure
      */
