@@ -3,6 +3,7 @@
 #include "utilities/constants.h"
 #include "Database/database.h"
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -68,24 +69,38 @@ vector<Scientist> ScientistRepository::searchForScientists(string searchTerm)
 
 bool ScientistRepository::addScientistToDatabase(const Scientist obj)
 {
+    Database theBase;
+    theBase.connect();
+
    bool success = false;
    string sex;
    enum sexType enumSex = obj.getSex();
-   if(enumSex == 'male'){
+   if(enumSex == sexType::Male)
+   {
        sex = "male";
    }
-   else if(enumSex == 'female'){
+   else if(enumSex == sexType::Female)
+   {
        sex = "female";
    }
-   else{
+   else
+   {
        sex = "annað";
    }
+   int yearBorn = obj.getYearBorn();
+   int yearDeath = obj.getYearDied();
+   while(yearBorn > yearDeath){
+       cout << "Must be born before you die" << endl;
+       cout << "Input correct death year or write 13337 to skip: ";
+       cin >> yearDeath;
+   }
+
    QSqlQuery query;
-   query.prepare("INSERT INTO Scientists (name, sex, yearbirth, yeardeath) VALUES (:name, :sex, :yearbirth, :yeardeath)");
+   query.prepare("INSERT INTO Scientists (Name, Sex, Yearbirth, Yeardeath) VALUES (:name, :sex, :yearbirth, :yeardeath)");
    query.bindValue(":name", QString::fromStdString(obj.getName()));
    query.bindValue(":sex", QString::fromStdString(sex));
-   query.bindValue(":yearbirth", obj.getYearBorn());
-   query.bindValue(":yeardeath", obj.getYearDied());
+   query.bindValue(":yearbirth", yearBorn);
+   query.bindValue(":yeardeath", yearDeath);
    if(query.exec())
    {
        success = true;
@@ -95,6 +110,7 @@ bool ScientistRepository::addScientistToDatabase(const Scientist obj)
         qDebug() << "addPerson error:  "
                  << query.lastError();
    }
+   theBase.disconnect();
 
    return success;
 }
