@@ -68,41 +68,25 @@ vector<Scientist> ScientistRepository::searchForScientists(string searchTerm)
     return filteredScientists;
 }
 
-bool ScientistRepository::addScientist(Scientist scientist)
+bool ScientistRepository::addScientist(const Scientist obj)
 {
-    QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbName = "ComputerHistory";
-    db.setDatabaseName(dbName);
-    ofstream file;//thessu tharf ad breyta, ekki ofstream heldur setja i toflu
+   bool success = false;
+   // you should check if args are ok first...
+   QSqlQuery query;
+   query.prepare("INSERT INTO people (name, sex, yearbirth, yeardeath) VALUES (:name, :sex, :yearbirth, :yeardeath)");
+   query.bindValue(":name", QString::fromStdString(obj.getName()));
+   query.bindValue(":sex", obj.getSex());
+   query.bindValue(":yearbirth", obj.getYearBorn());
+   query.bindValue(":yeardeath", obj.getYearDied());
+   if(query.exec())
+   {
+       success = true;
+   }
+   else
+   {
+        qDebug() << "addPerson error:  "
+                 << query.lastError();
+   }
 
-    db.open();
-    QSqlQuery query(db);
-
-    if (db.open())
-    {
-        string name = scientist.getName();
-        enum sexType sex = scientist.getSex();
-        int yearBorn = scientist.getYearBorn();
-        int yearDied = scientist.getYearDied();
-
-
-        file << name << constants::FILE_DELIMETER
-             << sex << constants::FILE_DELIMETER
-             << yearBorn << constants::FILE_DELIMETER;
-
-        if (yearDied != constants::YEAR_DIED_DEFAULT_VALUE)
-        {
-            file << yearDied;
-        }
-
-        file << '\n';
-    }
-    else
-    {
-        return false;
-    }
-
-    db.close();
-    return true;
+   return success;
 }
