@@ -11,9 +11,12 @@ Database::Database()
 
 void Database::connect()
 {
+    if(!db.open())
+    {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "ComputerHistory_db.sqlite";
     db.setDatabaseName(dbName);
+    createTables();
 
     if (!db.open())
     {
@@ -22,6 +25,7 @@ void Database::connect()
     else
     {
         qDebug() << "Database: connection ok";
+    }
     }
 }
 
@@ -42,7 +46,7 @@ void Database::createTables()
                "`YearBirth` int(5),"
                "`YearDeath` int(5),)");
 
-    query.exec("CREATE TABLE IF NOT EXISTS tengiTafla("
+    query.exec("CREATE TABLE IF NOT EXISTS conntectionTable("
                "`ID` int NOT NULL,"
                "`ID_scientist` int(11) NOT NULL,"
                "`ID_computer` int(11),"
