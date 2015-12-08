@@ -33,7 +33,7 @@ public:
      * @param scientist The model to save
      * @return true if it was a success, false if it was a failure
      */
-    bool addScientist(const Scientist obj);
+    bool addScientistToDatabase(const Scientist obj);
 
 private:
     std::string fileName;

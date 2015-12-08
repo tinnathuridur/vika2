@@ -26,5 +26,5 @@ std::vector<Scientist> ScientistService::searchForScientists(std::string searchT
 
 bool ScientistService::addScientist(Scientist scientist)
 {
-    return scientistRepo.addScientist(scientist);
+    return scientistRepo.addScientistToDatabase(scientist);
 }

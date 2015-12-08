@@ -66,21 +66,31 @@ vector<Scientist> ScientistRepository::searchForScientists(string searchTerm)
     return filteredScientists;
 }
 
-bool ScientistRepository::addScientist(const Scientist obj)
+bool ScientistRepository::addScientistToDatabase(const Scientist obj)
 {
    bool success = false;
-   // you should check if args are ok first...
+   string sex;
+   enum sexType enumSex = obj.getSex();
+   if(enumSex == "male"){
+       sex = "male";
+   }
+   else if(enumSex == "female"){
+       sex = "female";
+   }
+   else{
+       sex = "annað";
+   }
    QSqlQuery query;
-   query.prepare("INSERT INTO people (name, sex, yearbirth, yeardeath) VALUES (:name, :sex, :yearbirth, :yeardeath)");
+   query.prepare("INSERT INTO Scientists (name, sex, yearbirth, yeardeath) VALUES (:name, :sex, :yearbirth, :yeardeath)");
    query.bindValue(":name", QString::fromStdString(obj.getName()));
-   query.bindValue(":sex", obj.getSex());
+   query.bindValue(":sex", sex);
    query.bindValue(":yearbirth", obj.getYearBorn());
    query.bindValue(":yeardeath", obj.getYearDied());
    if(query.exec())
    {
-       success = true;
-   }
+       success = true;   }
    else
+
    {
         qDebug() << "addPerson error:  "
                  << query.lastError();
