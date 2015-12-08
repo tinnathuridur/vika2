@@ -10,7 +10,7 @@ Database::Database()
 
 }
 
-void Database::connect()
+QSqlDatabase Database::connect()
 {
     QSqlDatabase db;
     if(QSqlDatabase::contains(constants::CONNECTION_NAME))
@@ -34,6 +34,7 @@ void Database::connect()
         qDebug() << "Database: connection ok";
     }
 
+    return db;
 }
 
 void Database::createTables()
@@ -63,7 +64,7 @@ void Database::createTables()
                "FOREIGN KEY (ID_scientist) REFERENCES scientist(ID_scientist))");
 }
 
-QSqlDatabase Database::getDb()
+void Database::disconnect()
 {
-    return db;
+    db.close();
 }

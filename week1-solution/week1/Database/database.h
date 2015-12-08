@@ -7,9 +7,9 @@ class Database
 public:
     Database();
     //connect checks if db opens, if not it creates the database and calls createTables
-    void connect();
+    QSqlDatabase connect();
     void createTables();
-    QSqlDatabase getDb();
+    void disconnect();
 
 private:
     QSqlDatabase db;
