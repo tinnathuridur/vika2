@@ -5,6 +5,9 @@ class Database
 {
 public:
     Database();
+    void connect();
+    void createTables();
+    QSqlDatabase getDb();
 
 private:
     QSqlDatabase db;
