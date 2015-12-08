@@ -27,13 +27,11 @@ std::vector<Computer> ComputerRepository::getAllComputers()
         while(getline(file, line))
         {
             vector<string> fields = utils::splitString(line, constants::FILE_DELIMETER);
-
             if (fields.size() >= 3)
             {
                 string name = fields.at(0);
                 enum sexType sex = utils::stringToSex(fields.at(1));
                 int yearBorn = utils::stringToInt(fields.at(2));
-
                 if (fields.size() == 3)
                 {
                     scientists.push_back(Scientist(name, sex, yearBorn));
@@ -41,7 +39,6 @@ std::vector<Computer> ComputerRepository::getAllComputers()
                 else
                 {
                     int yearDied = utils::stringToInt(fields.at(3));
-
                     scientists.push_back(Scientist(name, sex, yearBorn, yearDied));
                 }
             }
@@ -93,7 +90,7 @@ bool ComputerRepository::addComputerToDatabase(const Computer obj)
    query.bindValue(":name", QString::fromStdString(obj.getName()));
    query.bindValue(":buildYear", obj.getYearInvented());
    query.bindValue(":ComputerType", QString::fromStdString(type));
-   query.bindValue(":BuiltOrNot", obj.getWasBuilt());
+   query.bindValue(":BuiltOrNot", QString::fromStdString(obj.getWasBuilt()));
    if(query.exec())
    {
        success = true;

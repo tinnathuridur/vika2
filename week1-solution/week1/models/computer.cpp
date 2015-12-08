@@ -3,14 +3,14 @@
 #include "utilities/constants.h"
 #include <vector>
 #include <string>
+
 using namespace std;
 
-Computer::Computer():name(" "), yearInvented(0), type(), wasBuilt(0)
-{
+Computer::Computer(){
 
 }
 
-Computer::Computer(string name, int yearInvented, computerType type, bool wasBuilt)
+Computer::Computer(string name, int yearInvented, computerType type, string wasBuilt)
 {
     this->name = name;
     this->yearInvented = yearInvented;
@@ -33,7 +33,7 @@ computerType Computer::getType() const
     return type;
 }
 
-bool Computer::getWasBuilt() const
+string Computer::getWasBuilt() const
 {
     return wasBuilt;
 }

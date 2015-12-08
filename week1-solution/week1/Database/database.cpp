@@ -45,7 +45,7 @@ void Database::createTables()
                "`Name` VarChar(100) NOT NULL ,"
                "`BuildYear` int(11),"
                " `ComputerType` VARCHAR(100),"
-               "`BuiltOrNot` BOOLEAN)");
+               "`BuiltOrNot` VARCHAR(10))");
 
     query.exec("CREATE TABLE IF NOT EXISTS Scientists"
                "(`ID_scientist`  INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,"

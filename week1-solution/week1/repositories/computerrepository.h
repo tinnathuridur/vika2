@@ -12,6 +12,7 @@ public:
     std::vector<Computer>getAllComputers();
     std::vector<Computer>searchForComputers(std::string searchTerm);
     bool addComputerToDatabase(const Computer obj);
+
 private:
     std::string fileName;
 

@@ -12,12 +12,12 @@ class Computer
 {
 public:
     Computer();
-    Computer(std::string name, int yearInvented, computerType type, bool wasBuilt);
+    Computer(std::string name, int yearInvented, computerType type, std::string wasBuilt);
 
     std::string getName() const;
     int getYearInvented() const;
     enum computerType getType() const;
-    bool getWasBuilt() const;
+    std::string getWasBuilt() const;
 
     bool contains(std::string searchTerm);
 
@@ -25,7 +25,7 @@ private:
     std::string name;
     int yearInvented;
     enum computerType type;
-    bool wasBuilt;
+    std::string wasBuilt;
 };
 
 #endif // COMPUTER_H

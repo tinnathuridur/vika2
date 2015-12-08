@@ -1,8 +1,7 @@
 #ifndef COMPUTERSERVICE_H
 #define COMPUTERSERVICE_H
+
 #include "repositories/computerrepository.h"
-#include <vector>
-#include <string>
 
 
 class ComputerService
