@@ -11,7 +11,7 @@ public:
     ComputerRepository();
     std::vector<Computer>getAllComputers();
     std::vector<Computer>searchForComputers(std::string searchTerm);
-    bool addComputer(const Computer obj);
+    bool addComputerToDatabase(const Computer obj);
 private:
     std::string fileName;
 
