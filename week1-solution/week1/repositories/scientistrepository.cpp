@@ -71,10 +71,10 @@ bool ScientistRepository::addScientistToDatabase(const Scientist obj)
    bool success = false;
    string sex;
    enum sexType enumSex = obj.getSex();
-   if(enumSex == "male"){
+   if(enumSex == 'male'){
        sex = "male";
    }
-   else if(enumSex == "female"){
+   else if(enumSex == 'female'){
        sex = "female";
    }
    else{
@@ -83,14 +83,14 @@ bool ScientistRepository::addScientistToDatabase(const Scientist obj)
    QSqlQuery query;
    query.prepare("INSERT INTO Scientists (name, sex, yearbirth, yeardeath) VALUES (:name, :sex, :yearbirth, :yeardeath)");
    query.bindValue(":name", QString::fromStdString(obj.getName()));
-   query.bindValue(":sex", sex);
+   query.bindValue(":sex", QString::fromStdString(sex));
    query.bindValue(":yearbirth", obj.getYearBorn());
    query.bindValue(":yeardeath", obj.getYearDied());
    if(query.exec())
    {
-       success = true;   }
+       success = true;
+   }
    else
-
    {
         qDebug() << "addPerson error:  "
                  << query.lastError();
