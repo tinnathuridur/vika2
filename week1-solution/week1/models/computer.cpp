@@ -1,6 +1,8 @@
 #include "models/computer.h"
 #include "utilities/utils.h"
 #include "utilities/constants.h"
+#include <vector>
+#include <string>
 using namespace std;
 
 Computer::Computer():name(" "), yearInvented(0), type(), wasBuilt(0)

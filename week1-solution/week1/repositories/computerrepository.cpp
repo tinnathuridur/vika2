@@ -1,6 +1,9 @@
 #include "computerrepository.h"
+#include <vector>
+#include <string>
 
-Computerrepository::Computerrepository()
+
+ComputerRepository::ComputerRepository()
 {
 
 }

@@ -1,12 +1,12 @@
 #include "utilities/computercomparator.h"
 
-Computercomparator::Computercomparator(std::string column, bool sortInAscendingOrder)
+ComputerComparator::ComputerComparator(std::string column, bool sortInAscendingOrder)
 {
     this->sortColumn = column;
     this->sortInAscendingOrder = sortInAscendingOrder;
 }
 
-bool Computercomparator::operator() (const Computer& first, const Computer& second)
+bool ComputerComparator::operator() (const Computer& first, const Computer& second)
 {
     if (sortColumn == "name")
     {

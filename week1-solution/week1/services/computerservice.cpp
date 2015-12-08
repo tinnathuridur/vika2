@@ -2,18 +2,20 @@
 #include "utilities/computercomparator.h"
 
 #include <algorithm>
+#include <vector>
+#include <string>
 
 using namespace std;
 
 
-Computerservice::Computerservice()
+ComputerService::ComputerService()
 {
 
 }
 
-std::vector<Computer> ComputerService::getAllComputers(std::string orderBy, bool orderAscending)
+/*std::vector<Computer> ComputerService::getAllComputers(std::string orderBy, bool orderAscending)
 {
-    vector<Computer> computers = comuterRepo.getAllComputers();
+    vector<Computer> computers = computerRepo.getAllComputers();
 
     std::sort(computers.begin(), computers.end(), ComputerComparator(orderBy, orderAscending));
 
@@ -29,3 +31,4 @@ bool ComputerService::addComputer(Computer computer)
 {
     return computerRepo.addComputer(computer);
 }
+*/
