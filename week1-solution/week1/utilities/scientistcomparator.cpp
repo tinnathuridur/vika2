@@ -30,6 +30,17 @@ bool ScientistComparator::operator() (const Scientist& first, const Scientist& s
             return second.getYearBorn() < first.getYearBorn();
         }
     }
+    else if (sortColumn == "yearDied")
+    {
+        if (sortInAscendingOrder)
+        {
+            return first.getYearDied() < second.getYearDied();
+        }
+        else
+        {
+            return second.getYearDied() < first.getYearDied();
+        }
+    }
 
     return false;
 }
