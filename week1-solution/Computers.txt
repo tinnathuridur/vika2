@@ -1,0 +1,50 @@
+The Difference engine
+1822
+Var ekki byggð.
+Mechanical computer
+Tengd við Charles Babbage
+
+Turing machine
+1936
+Var byggð
+Electronic computer
+Tengd við Alan Turing
+
+Z3
+1941
+Var byggð
+Electronic computer
+Tengd við Konrad Zuse
+
+Electronic Numerical Integrator and Calculator (ENIAC)
+1944
+Var byggð
+Electronic computer
+Tengd við John Mauchly og J. Presper Eckert
+
+Atanasoff-Berry computer
+1946
+var byggð
+Tengd við John Vincent Atanasoff og Clifford Berry
+
+Pascal's calculator
+1642
+Var byggð
+Mechanical 
+Tengd við Blaise Pascal
+
+Stepped Reckoner
+1672
+Var byggð
+Mechanical 
+Tengd við Gottfried Wilhelm von Leibniz
+
+The Thomas Arithmometer
+1820
+Var byggð 
+Mechanical
+Tengd við Charles Xavier Thomas de Colmar
+
+
+
+
