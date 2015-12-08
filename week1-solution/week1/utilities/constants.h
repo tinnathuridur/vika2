@@ -2,6 +2,7 @@
 #define CONSTANTS_H
 
 #include <string>
+#include <Qstring>
 
 /**
  * This file contains constants that this application uses
@@ -9,6 +10,7 @@
 
 namespace constants {
     const std::string DATA_FILE_NAME = "database.txt";
+    const QString CONNECTION_NAME = "connection";
     const char FILE_DELIMETER = '\t';
     const int YEAR_DIED_DEFAULT_VALUE = 13337;
 
