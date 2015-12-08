@@ -18,3 +18,4 @@ J. Presper Eckert,male,1919,1995
 Blaise Pascal,male,1623,1662
 Gottfried Wilhelm von Leibniz,male,1646,1716
 Charles Xavier Thomas de Colmar,male,1785,1870
+John Von Neumann,male,1903,1957
