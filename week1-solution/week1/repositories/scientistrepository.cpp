@@ -1,8 +1,7 @@
 #include "repositories/scientistrepository.h"
 #include "utilities/utils.h"
 #include "utilities/constants.h"
-#include <QtSql>
-#include <fstream>
+#include "Database/database.h"
 #include <cstdlib>
 
 using namespace std;
@@ -14,12 +13,11 @@ ScientistRepository::ScientistRepository()
 
 std::vector<Scientist> ScientistRepository::getAllScientists()
 {
-    ifstream file;
-
-    file.open(fileName.c_str());
+    Database theBase;
+    theBase.connect();
 
     vector<Scientist> scientists;
-
+    /*
     if (file.is_open())
     {
         string line;
@@ -45,9 +43,9 @@ std::vector<Scientist> ScientistRepository::getAllScientists()
                 }
             }
         }
-    }
+    }*/
 
-    file.close();
+    theBase.disconnect();
 
     return scientists;
 }
