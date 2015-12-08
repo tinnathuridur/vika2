@@ -52,7 +52,7 @@ void Database::createTables()
                "`Name` VarChar(100) NOT NULL ,"
                "`Sex` VarChar(100),"
                "`YearBirth` int(5),"
-               "`YearDeath` int(5),)");
+               "`YearDeath` int(5))");
 
     query.exec("CREATE TABLE IF NOT EXISTS ConntectionTable"
                "(`ID` int NOT NULL,"
