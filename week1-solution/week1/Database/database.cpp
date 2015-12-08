@@ -1,6 +1,7 @@
 #include <iostream>
 #include <QtSql>
 #include "database.h"
+#include "utilities/constants.h"
 
 using namespace std;
 
@@ -11,11 +12,10 @@ Database::Database()
 
 void Database::connect()
 {
-    QString connectionName = "connection";
     QSqlDatabase db;
-    if(QSqlDatabase::contains("connection"))
+    if(QSqlDatabase::contains(constants::CONNECTION_NAME))
     {
-        db = QSqlDatabase::database(("connection"));
+        db = QSqlDatabase::database((constants::CONNECTION_NAME));
     }
     else
     {
